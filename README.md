@@ -1,1 +1,143 @@
-# Happy-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Day ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background: linear-gradient(135deg,#ff758c,#ff7eb3);
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  color:white;
+}
+
+/* Floating hearts */
+.heart-bg{
+  position:absolute;
+  font-size:20px;
+  animation: float 6s linear infinite;
+  opacity:0.6;
+}
+@keyframes float{
+  0%{transform:translateY(100vh);opacity:0}
+  100%{transform:translateY(-10vh);opacity:1}
+}
+
+.card{
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  padding:40px;
+  border-radius:25px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.25);
+  max-width:420px;
+  text-align:center;
+}
+
+h1{font-size:2.3em;margin-bottom:5px;}
+h2{font-weight:normal;margin-bottom:15px;}
+
+.photo{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid white;
+  margin:10px 0;
+}
+
+.heart{
+  font-size:2.8em;
+  animation:beat 1s infinite;
+}
+@keyframes beat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.3)}
+}
+
+button{
+  margin-top:20px;
+  padding:12px 22px;
+  border:none;
+  border-radius:20px;
+  font-size:16px;
+  background:white;
+  color:#ff4d6d;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+#hiddenMsg{
+  display:none;
+  margin-top:20px;
+  font-size:1.1em;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Romantic Background Music -->
+<audio autoplay loop>
+  <source src="your-music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+for(let i=0;i<25;i++){
+  let heart=document.createElement("div");
+  heart.innerHTML="❤️";
+  heart.className="heart-bg";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(3+Math.random()*4)+"s";
+  heart.style.fontSize=(15+Math.random()*20)+"px";
+  document.body.appendChild(heart);
+}
+</script>
+
+<div class="card">
+  <h1>Happy Valentine’s Day 💖</h1>
+  <h2>My Love</h2>
+
+
+  <div class="heart">❤️</div>
+
+  <p>
+    You are my peace, my happiness, and my forever home.  
+    Every day with you feels warm, safe and full of love.
+  </p>
+
+  <p>
+    Thank you for being so kind, caring and loving.  
+    I’m the luckiest girl in the world to have you in my life.
+  </p>
+
+  <button onclick="showMsg()">Click for a Surprise 💌</button>
+
+<div id="hiddenMsg">
+  
+  <!-- Photo appears after click -->
+  <img src="photo.jpeg" class="photo">
+
+  <p>
+    I fall in love with you more every single day.  
+    I promise to stand by you, laugh with you and love you forever ❤️  
+  </p>
+
+  <br>
+  — Yours always 💕
+
+</div>
+
+<script>
+function showMsg(){
+  document.getElementById("hiddenMsg").style.display="block";
+}
+</script>
+
+</body>
+</html>
